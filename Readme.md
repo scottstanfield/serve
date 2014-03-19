@@ -30,6 +30,7 @@ Options:
       --compress       gzip or deflate the response
       --exec <cmd>     execute command on each request
   -h, --help           output usage information
+  -o, --open           open default browser to page
 ```
 
 ## Examples
