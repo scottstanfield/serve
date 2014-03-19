@@ -16,6 +16,7 @@
     , "jade": "*"
     , "less-middleware": "*"
     , "commander": "0.6.1"
+    , "open": "0.0.4"
   }
   , "bin": { "serve": "./bin/serve" }
 }

@@ -13,6 +13,7 @@ var resolve = require('path').resolve
   , jade = require('jade')
   , less = require('less-middleware')
   , url = require('url')
+  , open = require('open')
   , fs = require('fs');
 
 // CLI
@@ -34,6 +35,7 @@ program
   .option('-C, --cors', 'allows cross origin access serving')
   .option('    --compress', 'gzip or deflate the response')
   .option('    --exec <cmd>', 'execute command on each request')
+  .option('-o, --open', 'open default browser to site')
   .parse(process.argv);
 
 // path
@@ -131,5 +133,10 @@ if (program.dirs) {
 // start the server
 server.listen(program.port, function () {
   console.log('\033[90mserving \033[36m%s\033[90m on port \033[96m%d\033[0m', path, program.port);
+
+  if (program.open) {
+    var address = 'http://localhost:' + program.port;
+    open(address);
+  }
 });
 
